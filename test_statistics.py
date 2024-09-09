@@ -1,11 +1,11 @@
-"""Tests for statistics module"""
+"""Tests for statistics module."""
 from unittest import TestCase
 from statistics import variance, stdev
 from math import sqrt
 
 
 class StatisticsTest(TestCase):
-    """Tests for statistics module"""
+    """Tests for statistics module."""
 
     def test_variance_typical_values(self):
         """Variance of typical values."""

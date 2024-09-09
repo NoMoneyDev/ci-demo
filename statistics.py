@@ -1,4 +1,4 @@
-"""Functions for statistics"""
+"""Functions for statistics."""
 from math import sqrt
 
 
@@ -10,7 +10,7 @@ def average(data):
 
 
 def variance(data):
-    """The population variance of a list of numbers in data.
+    """Population variance of a list of numbers in data.
 
     The variance is the sum of squared differences between data values
     and their mean, divided by the number of items in the list.
@@ -42,5 +42,5 @@ def variance(data):
 
 
 def stdev(data):
-    """The standard deviation of a list of values."""
+    """Standard deviation of a list of values."""
     return sqrt(variance(data))
