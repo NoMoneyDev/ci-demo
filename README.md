@@ -1,5 +1,7 @@
 Continuous Integration Demo
 ===========================
+[![Run unittests](https://github.com/NoMoneyDev/ci-demo/actions/workflows/pytest.yml/badge.svg)](https://github.com/NoMoneyDev/ci-demo/actions/workflows/pytest.yml)
+[![flake8 test](https://github.com/NoMoneyDev/ci-demo/actions/workflows/flake8_lint.yml/badge.svg)](https://github.com/NoMoneyDev/ci-demo/actions/workflows/flake8_lint.yml)
 
 This project demonstrates use of Github Actions to build and test a Python project.  
 
