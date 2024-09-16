@@ -27,17 +27,18 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip install pytest
+        pip install pytest pytest-cov
         pip install coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
    
     - name: Test with pytest
       run: |
-        coverage run --branch -m unittest
+        pytest --cov
 
     - name: Generate Coverage Report
       run: |
         coverage report
+
     - name: Upload results to Codecov
       uses: codecov/codecov-action@v4
       with:
