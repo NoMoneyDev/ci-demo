@@ -33,13 +33,15 @@ jobs:
    
     - name: Test with pytest
       run: |
-        pytest --cov
+        pytest --cov --junitxml=junit.xml -o junit_family=legacy
 
     - name: Generate Coverage Report
       run: |
         coverage report
-
-    - name: Upload results to Codecov
-      uses: codecov/codecov-action@v4
+      
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+  
