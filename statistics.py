@@ -2,14 +2,14 @@
 from math import sqrt
 
 
-def average(data):
+def average(data: list[float | int]):
     """Return the average of a list of numeric values in data."""
     if len(data) == 0:
         raise ValueError("List must contain at least one value")
     return sum(data)/len(data)
 
 
-def variance(data):
+def variance(data: list[float | int]):
     """Return population variance of a list of numbers in data.
 
     The variance is the sum of squared differences between data values
@@ -41,6 +41,6 @@ def variance(data):
     return sum([(x-avg)**2 for x in data])/n
 
 
-def stdev(data):
+def stdev(data: list[float | int]):
     """Return standard deviation of a list of values."""
     return sqrt(variance(data))

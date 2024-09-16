@@ -1,6 +1,6 @@
 """Tests for statistics module."""
 from unittest import TestCase
-from statistics import variance, stdev
+from statistics import variance, stdev, average
 from math import sqrt
 
 
@@ -20,6 +20,26 @@ class StatisticsTest(TestCase):
         # variance([0,4,4,8]) == 8
         self.assertAlmostEqual(8.0, variance([0.1, 4.1, 4.1, 8.1]))
 
+    def test_variance_empty(self):
+        """Test variance on empty lists"""
+        with self.assertRaises(ValueError):
+            variance([])
+
+    def test_average_int(self):
+        """Average of integers"""
+        self.assertEqual(10, average([5,10,15]))
+        self.assertEqual(100, average([50, 150, 200, 0]))
+
+    def test_average_non_int(self):
+        """Average of non integers"""
+        self.assertAlmostEqual(100.5, average([100.0, 101.0, 100.5]))
+        self.assertAlmostEqual(0.5, average([0.1, 0.9, 0.4, 0.6]))
+
+    def test_average_empty(self):
+        """Test average on empty lists"""
+        with self.assertRaises(ValueError):
+            average([])
+
     def test_stdev(self):
         """Test stdev function."""
         # standard deviation of a single value should be zero
@@ -30,6 +50,6 @@ class StatisticsTest(TestCase):
         self.assertEqual(sqrt(0.5), stdev([0, 0.5, 1, 1.5, 2]))
 
 
-if __name__ == '__main__':
-    import unittest
-    unittest.main(verbosity=1)
+# if __name__ == '__main__':
+#     import unittest
+#     unittest.main(verbosity=1)

@@ -32,4 +32,8 @@ jobs:
    
     - name: Test with pytest
       run: |
-        pytest
+        coverage run --branch -m unittest
+
+    - name: Generate Coverage Report
+      run: |
+        coverage report
